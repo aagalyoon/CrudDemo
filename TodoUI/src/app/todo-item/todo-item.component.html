@@ -1,0 +1,28 @@
+<div>
+<h2>Add / Update</h2>
+  <form (ngSubmit)="addTodoItem()">
+    <input type="text" [(ngModel)]="newTodoItem.description" name="description" placeholder="Description" required>
+<br/><br/>    <input type="date" [(ngModel)]="newTodoItem.dueDate" name="dueDate" required>
+<br/><br/>    <input type="text" [(ngModel)]="newTodoItem.priority" name="priority" placeholder="Priority" required>
+<br/><br/>    <button type="submit">Add Todo</button>
+  </form>
+<hr/>
+  <h2>Search</h2>
+  <form (ngSubmit)="searchTodos()">
+    <input type="text" [(ngModel)]="searchDescription" name="searchDescription" placeholder="Search by description">
+    <p>(Partial Match)</p>
+    <input type="text" [(ngModel)]="searchPriority" name="searchPriority" placeholder="Search by priority">
+    <p>(Exact Match)</p>
+    <button type="submit">Search</button>
+  </form>
+<hr/>
+  <h2>Todo Items</h2>
+  <div *ngFor="let item of todoItems">
+    <p>Description: {{item.description}}</p>
+    <p>Due Date: {{item.dueDate}}</p>
+    <p>Priority: {{item.priority}}</p>
+
+    <button (click)="updateTodoItem(item.id)">Update</button> <br/><br/>
+    <button (click)="deleteTodoItem(item.id)">Delete</button> <br/><br/>
+  </div>
+</div>
