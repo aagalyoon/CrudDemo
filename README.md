@@ -1,4 +1,4 @@
-# Scoot Todo Demo Application
+# WIP Spring API Application
 
 This project consists of a Spring Boot application (backend) with a RESTful API and an Angular application (frontend).
 
